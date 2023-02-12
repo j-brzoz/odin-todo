@@ -1,0 +1,101 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
+
+* { 
+    margin: 0;
+    padding: 0; 
+    box-sizing: border-box; 
+}
+
+@media screen and (min-width: 1201px){
+    html {
+        font-size: 18px;
+    }
+}
+
+@media screen and (min-width: 601px) and (max-width: 1200px){
+    html {
+        font-size: 14px;
+    }
+}
+
+@media screen and (max-width: 600px){
+    html {
+        font-size: 10px;
+    }
+}
+
+body {
+    font-family: "Raleway", Arial, sans-serif;
+    display: grid;
+    grid-template-columns: 12rem calc(100vw - 12rem);
+    grid-template-rows: 4rem calc(100vh - 6rem) 2rem;
+}
+
+.header {
+    grid-area: 1 / 1 / 2 / 3;
+    text-align: center;
+    font-size: 3rem;
+    margin: 0.5rem 0rem;
+}
+
+.sidebar {
+    grid-area: 2 / 1 / 3 / 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    border-right: 2px solid black;
+}
+
+.sidebarBtns{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem 0;
+    gap: 1rem;
+    border-bottom: 1px solid black;  
+}
+
+.sidebarBtn {
+    border: none;
+    font-family: "Raleway", Arial, sans-serif;
+    font-size: 1.2rem;
+    width: 10rem;
+    height: 2rem;
+    background-color: white;
+}
+
+.sidebarBtn:hover {
+    background-color: lightgray;
+}
+
+.main {
+    grid-area: 2 / 2 / 3 / 3;
+}
+
+.mainBtns {
+    display: flex;
+    margin: 2rem;
+    margin-left: 10rem;
+    gap: 2rem;
+}
+
+.mainBtn {
+    border: none;
+    font-family: "Raleway", Arial, sans-serif;
+    height: 2rem;
+    width: 4rem;
+    font-size: 1rem;
+    font-weight: 800;
+    background-color: lightgray;
+    border-radius: 0.4rem;
+}
+
+.mainBtn:hover {
+    background-color: gray;
+}
+
+.footer {
+    grid-area: 3 / 1 / 4 / 3;
+    text-align: center;
+}
