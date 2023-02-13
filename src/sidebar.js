@@ -1,4 +1,6 @@
 import "./style.css";
+import { projects } from "./project";
+import { lists } from "./list"
 
 function sidebarBtns(){
     const sidebarBtnsDiv = document.createElement("div")
@@ -25,14 +27,52 @@ function sidebarBtns(){
     sidebarBtnsDiv.appendChild(allBtn);
 
     return sidebarBtnsDiv;
-} 
+}
+
+function sidebarProjects(){
+    const sidebarProjectsDiv = document.createElement("div");
+    sidebarProjectsDiv.classList.add("sidebarBtns");
+
+    const sidebarProjectsTitle = document.createElement("div");
+    sidebarProjectsTitle.textContent = "your projects";
+    sidebarProjectsTitle.classList.add("sidebarTitle")
+    sidebarProjectsDiv.appendChild(sidebarProjectsTitle);
+    
+    for(let i = 0; i < projects.length; i+=1){
+        const projectBtn = document.createElement("button");
+        projectBtn.textContent = projects[i].title;
+        projectBtn.classList.add("sidebarBtn");
+        sidebarProjectsDiv.appendChild(projectBtn);
+    }
+    return sidebarProjectsDiv;
+}
+
+function sidebarLists(){
+    const sidebarListsDiv = document.createElement("div");
+    sidebarListsDiv.classList.add("sidebarBtns");
+
+    const sidebarListsTitle = document.createElement("div");
+    sidebarListsTitle.textContent = "your lists";
+    sidebarListsTitle.classList.add("sidebarTitle")
+    sidebarListsDiv.appendChild(sidebarListsTitle);
+    
+    for(let i = 0; i < lists.length; i+=1){
+        const listBtn = document.createElement("button");
+        listBtn.textContent = lists[i].title;
+        listBtn.classList.add("sidebarBtn");
+        sidebarListsDiv.appendChild(listBtn);
+    }
+    return sidebarListsDiv;
+}
 
 function sidebar(){
     const sidebarDiv = document.createElement("div");
     sidebarDiv.classList.add("sidebar");
 
     sidebarDiv.appendChild(sidebarBtns());
-    
+    sidebarDiv.appendChild(sidebarProjects());
+    sidebarDiv.append(sidebarLists());
+
     return sidebarDiv;
 }
 
