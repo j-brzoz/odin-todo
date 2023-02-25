@@ -5,11 +5,17 @@ module.exports = {
   mode: "development",
   entry: "./src/index.js",
   output: {
-    filename: "main.js",
+    filename: "[name].js",
     path: path.resolve(__dirname, "dist"),
     clean: true,
   },
   devtool: "inline-source-map",
+  devServer: {
+    static: "./dist",
+  },
+  optimization: {
+    runtimeChunk: "single",
+  },
   plugins: [
     new HtmlWebpackPlugin({
       title: "Your todo",
