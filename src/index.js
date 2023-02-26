@@ -3,7 +3,7 @@
 // import { projects, projectExample, addProjectToArray, editProject, deleteProject } from "./project"
 
 // addListToArray(listExample);
-// addProjectToArray(projectExample);
+
 
 // addTaskToParent(task1);
 // addTaskToParent(task2);
@@ -21,5 +21,20 @@
 // console.log(lists);
 
 import pageStucture from "./pageStructure";
+import {addProjectToArray, projectExample, projectExample2, projectExample3, projectExample4} from "./project"
+import {addListToArray, listExample, listExample2, listExample3, listExample4} from "./list"
+import { dataHandling } from "./addModal";
+
+addProjectToArray(projectExample);
+addProjectToArray(projectExample2);
+addProjectToArray(projectExample3);
+addProjectToArray(projectExample4);
+
+addListToArray(listExample);
+addListToArray(listExample2);
+addListToArray(listExample3);
+addListToArray(listExample4);
+
 
 pageStucture();
+dataHandling();

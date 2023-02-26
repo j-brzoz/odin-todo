@@ -1,4 +1,5 @@
 import "./style.css";
+import { modal, modalDisplay } from "./addModal";
 
 function mainBtns(){
     const mainBtnsDiv = document.createElement("div");
@@ -13,19 +14,22 @@ function mainBtns(){
     sortBtn.classList.add("mainBtn");
     addBtn.classList.add("mainBtn");
 
+    addBtn.addEventListener("click", () => modalDisplay());
+
     mainBtnsDiv.appendChild(sortBtn);
     mainBtnsDiv.appendChild(addBtn);
 
     return mainBtnsDiv;
 }
 
-function main(){
+function mainContent(){
     const mainDiv = document.createElement("div");
     mainDiv.classList.add("main");
 
     mainDiv.appendChild(mainBtns());
+    mainDiv.appendChild(modal());
 
     return mainDiv;
 }
 
-export default main;
+export default mainContent;
