@@ -1,6 +1,6 @@
-import "./style.css";
-import { projects } from "./project";
-import { lists } from "./list"
+import "../style.css";
+import { projects } from "../logic/project";
+import { lists } from "../logic/list"
 
 function sidebarBtns(){
     const sidebarBtnsDiv = document.createElement("div")

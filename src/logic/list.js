@@ -7,7 +7,10 @@ class List {
 }
 
 const lists = [];
-const listExample = new List("life", "default list");
+const listExample = new List("house", "default list");
+const listExample2 = new List("uni", "default list");
+const listExample3 = new List("work", "default list");
+const listExample4 = new List("family", "default list");
 
 function addListToArray(list){
     lists.push(list);
@@ -33,4 +36,4 @@ function deleteList(list){
     }
 }
 
-export { lists, listExample, addListToArray, editList, deleteList };
+export { lists, listExample, listExample2, listExample3, listExample4, addListToArray, editList, deleteList };

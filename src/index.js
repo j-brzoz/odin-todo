@@ -20,10 +20,10 @@
 // console.log(projects);
 // console.log(lists);
 
-import pageStucture from "./pageStructure";
-import {addProjectToArray, projectExample, projectExample2, projectExample3, projectExample4} from "./project"
-import {addListToArray, listExample, listExample2, listExample3, listExample4} from "./list"
-import { dataHandling } from "./addModal";
+import pageStucture from "./page-generator/pageStructure";
+import {addProjectToArray, projectExample, projectExample2, projectExample3, projectExample4} from "./logic/project"
+import {addListToArray, listExample, listExample2, listExample3, listExample4} from "./logic/list"
+import { dataTaskHandling } from "./modals/taskModal";
 
 addProjectToArray(projectExample);
 addProjectToArray(projectExample2);
@@ -37,4 +37,4 @@ addListToArray(listExample4);
 
 
 pageStucture();
-dataHandling();
+dataTaskHandling();

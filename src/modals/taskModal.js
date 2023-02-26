@@ -1,14 +1,9 @@
-import { Task } from "./task"
+import { Task } from "../logic/task"
+import * as general from "./general"
 
-// changes modal display
-function modalDisplay() {
-    const change = document.getElementById("modal");
-    change.style.display = change.style.display !== "block" ? "block" : "none";
-};
-
-function dataHandling(){
+function dataTaskHandling(){
     // DOM elements
-    const modalDiv = document.createElement("div");
+    const modalDiv = document.querySelector(".modal");
     const taskForm = document.getElementById("newTaskForm");
 
     // when you submit
@@ -39,14 +34,7 @@ function dataHandling(){
     })
 };
 
-// for setting multiple attributes
-function attributesSetter(element, elementAttributes){
-    Object.keys(elementAttributes).forEach(attribute => {
-        element.setAttribute(attribute, elementAttributes[attribute])
-    })
-}
-
-function formGenerator(){   
+function taskFormGenerator(){   
     // form
     const form = document.createElement("form");
     form.setAttribute("action", "");
@@ -65,7 +53,7 @@ function formGenerator(){
         maxlength: 30,
         required: true
     }
-    attributesSetter(title, titleAttributes);
+    general.attributesSetter(title, titleAttributes);
 
     // description
     const description = document.createElement("input");
@@ -76,7 +64,7 @@ function formGenerator(){
         placeholder: "Description",
         maxlength: 200,
     }
-    attributesSetter(description, descriptionAttributes);
+    general.attributesSetter(description, descriptionAttributes);
 
     // dueDate
     const dueDate = document.createElement("input");
@@ -87,7 +75,7 @@ function formGenerator(){
         placeholder: "Due date",
         required: true
     }
-    attributesSetter(dueDate, dueDateAttributes);    
+    general.attributesSetter(dueDate, dueDateAttributes);    
 
     // priority
     const priority = document.createElement("input");
@@ -100,7 +88,7 @@ function formGenerator(){
         step: 1,
         required: true
     }
-    attributesSetter(priority, priorityAttributes);
+    general.attributesSetter(priority, priorityAttributes);
 
     // parentType
     // list
@@ -111,7 +99,7 @@ function formGenerator(){
         name: "parentType",
         value: "list"
     }
-    attributesSetter(parentTypeList, parentTypeListAttributes);
+    general.attributesSetter(parentTypeList, parentTypeListAttributes);
     const parentTypeListLabel = document.createElement("label");
     parentTypeListLabel.setAttribute("for", "parentTypeList");
     parentTypeListLabel.textContent = "list";
@@ -123,7 +111,7 @@ function formGenerator(){
         name: "parentType",
         value: "project"
     }
-    attributesSetter(parentTypeProject, parentTypeProjectAttributes);
+    general.attributesSetter(parentTypeProject, parentTypeProjectAttributes);
     const parentTypeProjectLabel = document.createElement("label");
     parentTypeProjectLabel.setAttribute("for", "parentTypeProject");
     parentTypeProjectLabel.textContent = "project";
@@ -139,7 +127,7 @@ function formGenerator(){
         maxlength: 30,
         required: true
     }
-    attributesSetter(parentName, parentNameAttributes);
+    general.attributesSetter(parentName, parentNameAttributes);
 
     // submit button
     const submitBtn = document.createElement("button");
@@ -161,28 +149,41 @@ function formGenerator(){
     return form;
 }
 
-function modal(){
-    const modalDiv = document.createElement("div");
-    modalDiv.classList.add("modal");
-    modalDiv.setAttribute("id", "modal")
+function taskModal(){
+    // const modalDiv = document.createElement("div");
+    // modalDiv.classList.add("modal");
+    // modalDiv.setAttribute("id", "taskModal")
+
+    // const modalContent = document.createElement("div");
+    // modalContent.classList.add("modalContent");
+
+    // const text = document.createElement("p");
+    // text.textContent = "Add new task";
+
+    // modalContent.appendChild(text);
+    // modalContent.appendChild(taskFormGenerator());
+    // modalDiv.appendChild(modalContent);
+
+    // // lets you to exit modal by clicking outside the modal
+    // window.onclick = function modalToNone(event) {
+    //     if (event.target === modalDiv) {
+    //       modalDiv.style.display = "none";
+    //     }
+    // };
+    const modalDiv = general.modalGenerator();
+    modalDiv.setAttribute("id", "taskModal");
 
     const modalContent = document.createElement("div");
     modalContent.classList.add("modalContent");
-
+    
     const text = document.createElement("p");
     text.textContent = "Add new task";
 
     modalContent.appendChild(text);
-    modalContent.appendChild(formGenerator());
+    modalContent.appendChild(taskFormGenerator());
     modalDiv.appendChild(modalContent);
-
-    // lets you to exit modal by clicking outside the modal
-    window.onclick = function modalToNone(event) {
-        if (event.target === modalDiv) {
-          modalDiv.style.display = "none";
-        }
-    };
+    
     return modalDiv
 }
 
-export { modal, modalDisplay, dataHandling};
+export { taskModal, dataTaskHandling};

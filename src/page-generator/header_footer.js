@@ -1,4 +1,4 @@
-import "./style.css";
+import "../style.css";
 
 function header(){
     const headerDiv = document.createElement("div");

@@ -9,6 +9,9 @@ class Project {
 
 const projects = [];
 const projectExample = new Project("side hustle", "default project", "11.03.2023");
+const projectExample2 = new Project("birthday party", "default project", "11.03.2023");
+const projectExample3 = new Project("car repair", "default project", "11.03.2023");
+const projectExample4 = new Project("vacation plan", "default project", "11.03.2023");
 
 function addProjectToArray(project){
     projects.push(project);
@@ -35,4 +38,4 @@ function deleteProject(project){
     }
 }
 
-export { projects, projectExample, addProjectToArray, editProject, deleteProject };
+export { projects, projectExample, projectExample2,projectExample3,projectExample4,addProjectToArray, editProject, deleteProject };
