@@ -1,6 +1,7 @@
 import "../style.css";
 import { taskModal } from "../modals/taskModal";
 import { modalDisplay } from "../modals/general";
+import { listModal } from "../modals/listModal";
 
 function mainBtns(){
     const mainBtnsDiv = document.createElement("div");
@@ -21,7 +22,8 @@ function mainBtns(){
     addListBtn.classList.add("mainBtn");
     addProjectBtn.classList.add("mainBtn");
 
-    addTaskBtn.addEventListener("click", () => modalDisplay());
+    addTaskBtn.addEventListener("click", () => modalDisplay("taskModal"));
+    addListBtn.addEventListener("click", () => modalDisplay("listModal"));
 
     mainBtnsDiv.appendChild(sortBtn);
     mainBtnsDiv.appendChild(addTaskBtn);
@@ -37,6 +39,7 @@ function mainContent(){
 
     mainDiv.appendChild(mainBtns());
     mainDiv.appendChild(taskModal());
+    mainDiv.appendChild(listModal());
 
     return mainDiv;
 }

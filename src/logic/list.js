@@ -1,19 +1,23 @@
+const lists = [];
+
 class List {
     constructor(title, description){
         this.title = title;
         this.description = description;
         this.tasks = [];
     }
-}
 
-const lists = [];
-const listExample = new List("house", "default list");
-const listExample2 = new List("uni", "default list");
-const listExample3 = new List("work", "default list");
-const listExample4 = new List("family", "default list");
+    addListToArray = function addL(){
+        lists.push(this);
+    }
 
-function addListToArray(list){
-    lists.push(list);
+    deleteList = function deleteL(){
+        for(let i = 0; i < lists.length; i+=1){
+            if(this.title === lists[i].title){
+                lists.splice(i, 1);                
+            }
+        }
+    }
 }
 
 function editList(list, newTitle, newDescription){
@@ -28,12 +32,9 @@ function editList(list, newTitle, newDescription){
     }
 }
 
-function deleteList(list){
-    for(let i = 0; i < lists.length; i+=1){
-        if(list.title === lists[i].title){
-            lists.splice(i, 1);                
-        }
-    }
-}
+const listExample = new List("house", "default list");
+const listExample2 = new List("uni", "default list");
+const listExample3 = new List("work", "default list");
+const listExample4 = new List("family", "default list");
 
-export { lists, listExample, listExample2, listExample3, listExample4, addListToArray, editList, deleteList };
+export { List, lists, listExample, listExample2, listExample3, listExample4, editList};

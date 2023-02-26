@@ -150,27 +150,8 @@ function taskFormGenerator(){
 }
 
 function taskModal(){
-    // const modalDiv = document.createElement("div");
-    // modalDiv.classList.add("modal");
-    // modalDiv.setAttribute("id", "taskModal")
-
-    // const modalContent = document.createElement("div");
-    // modalContent.classList.add("modalContent");
-
-    // const text = document.createElement("p");
-    // text.textContent = "Add new task";
-
-    // modalContent.appendChild(text);
-    // modalContent.appendChild(taskFormGenerator());
-    // modalDiv.appendChild(modalContent);
-
-    // // lets you to exit modal by clicking outside the modal
-    // window.onclick = function modalToNone(event) {
-    //     if (event.target === modalDiv) {
-    //       modalDiv.style.display = "none";
-    //     }
-    // };
-    const modalDiv = general.modalGenerator();
+    const modalDiv = document.createElement("div");
+    modalDiv.classList.add("modal");
     modalDiv.setAttribute("id", "taskModal");
 
     const modalContent = document.createElement("div");
@@ -179,10 +160,15 @@ function taskModal(){
     const text = document.createElement("p");
     text.textContent = "Add new task";
 
+    const closeBtn = document.createElement("button");
+    closeBtn.textContent = "close";
+    closeBtn.addEventListener("click", () => general.modalDisplay("taskModal"));
+    
     modalContent.appendChild(text);
+    modalContent.appendChild(closeBtn);
     modalContent.appendChild(taskFormGenerator());
     modalDiv.appendChild(modalContent);
-    
+
     return modalDiv
 }
 

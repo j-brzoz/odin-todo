@@ -22,19 +22,14 @@
 
 import pageStucture from "./page-generator/pageStructure";
 import {addProjectToArray, projectExample, projectExample2, projectExample3, projectExample4} from "./logic/project"
-import {addListToArray, listExample, listExample2, listExample3, listExample4} from "./logic/list"
 import { dataTaskHandling } from "./modals/taskModal";
+import { dataListHandling } from "./modals/listModal";
 
 addProjectToArray(projectExample);
 addProjectToArray(projectExample2);
 addProjectToArray(projectExample3);
 addProjectToArray(projectExample4);
 
-addListToArray(listExample);
-addListToArray(listExample2);
-addListToArray(listExample3);
-addListToArray(listExample4);
-
-
 pageStucture();
 dataTaskHandling();
+dataListHandling();
