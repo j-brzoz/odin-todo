@@ -21,15 +21,11 @@
 // console.log(lists);
 
 import pageStucture from "./page-generator/pageStructure";
-import {addProjectToArray, projectExample, projectExample2, projectExample3, projectExample4} from "./logic/project"
 import { dataTaskHandling } from "./modals/taskModal";
 import { dataListHandling } from "./modals/listModal";
-
-addProjectToArray(projectExample);
-addProjectToArray(projectExample2);
-addProjectToArray(projectExample3);
-addProjectToArray(projectExample4);
+import { dataProjectHandling } from "./modals/projectModal";
 
 pageStucture();
 dataTaskHandling();
 dataListHandling();
+dataProjectHandling();
