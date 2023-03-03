@@ -32,9 +32,7 @@ function editList(list, newTitle, newDescription){
     }
 }
 
-const listExample = new List("house", "default list");
-const listExample2 = new List("uni", "default list");
-const listExample3 = new List("work", "default list");
-const listExample4 = new List("family", "default list");
+const defaultList = new List("Default list", "Your default list.");
+defaultList.addListToArray();
 
-export { List, lists, listExample, listExample2, listExample3, listExample4, editList};
+export { List, lists, editList};

@@ -36,9 +36,7 @@ function editProject(project, newTitle, newDescription, newDueDate){
 }
 
 
-const projectExample = new Project("side hustle", "default project", "11.03.2023");
-const projectExample2 = new Project("birthday party", "default project", "11.03.2023");
-const projectExample3 = new Project("car repair", "default project", "11.03.2023");
-const projectExample4 = new Project("vacation plan", "default project", "11.03.2023");
+const defaultProject = new Project("Default project", "Your default project.", "11.03.2023");
+defaultProject.addProjectToArray();
 
-export { Project, projects, projectExample, projectExample2,projectExample3,projectExample4, editProject, };
+export { Project, projects, editProject, };
