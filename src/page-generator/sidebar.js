@@ -1,6 +1,12 @@
 import "../style.css";
 import { projects } from "../logic/project";
-import { lists } from "../logic/list"
+import { lists } from "../logic/list";
+import { taskFromList, taskFromProject } from "./taskDisplayFromListProject";
+
+function cleanContent(){
+    const div = document.getElementById("taskDisplay");
+    div.innerHTML = "";
+}
 
 function sidebarBtns(){
     const sidebarBtnsDiv = document.createElement("div")
@@ -42,6 +48,8 @@ function sidebarProjects(){
         const projectBtn = document.createElement("button");
         projectBtn.textContent = projects[i].title;
         projectBtn.classList.add("sidebarBtn");
+        projectBtn.addEventListener("click", () => cleanContent());
+        projectBtn.addEventListener("click", () => taskFromProject(projects[i].title));
         sidebarProjectsDiv.appendChild(projectBtn);
     }
     return sidebarProjectsDiv;
@@ -60,6 +68,8 @@ function sidebarLists(){
         const listBtn = document.createElement("button");
         listBtn.textContent = lists[i].title;
         listBtn.classList.add("sidebarBtn");
+        listBtn.addEventListener("click", () => cleanContent());
+        listBtn.addEventListener("click", () => taskFromList(lists[i].title));
         sidebarListsDiv.appendChild(listBtn);
     }
     return sidebarListsDiv;
@@ -76,4 +86,4 @@ function sidebar(){
     return sidebarDiv;
 }
 
-export default sidebar;
+export { sidebar, cleanContent };

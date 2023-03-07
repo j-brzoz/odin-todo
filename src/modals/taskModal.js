@@ -1,5 +1,7 @@
-import { Task } from "../logic/task"
-import * as general from "./general"
+import { Task } from "../logic/task";
+import { cleanContent } from "../page-generator/sidebar";
+import * as general from "./general";
+import { taskFromList, taskFromProject } from "../page-generator/taskDisplayFromListProject";
 
 function dataTaskHandling(){
     // DOM elements
@@ -31,6 +33,11 @@ function dataTaskHandling(){
         newTask.addTaskToParent();
 
         taskForm.reset();
+        cleanContent();
+        if(parentType === "project")
+            taskFromProject(parentName);
+        else if(parentType === "list")
+            taskFromList(parentName);
     })
 };
 

@@ -44,6 +44,12 @@ function mainContent(){
     mainDiv.appendChild(listModal());
     mainDiv.appendChild(projectModal());
 
+    const taskDisplay = document.createElement("div")
+    taskDisplay.setAttribute("id", "taskDisplay")
+    taskDisplay.classList.add("taskDisplay")
+
+    mainDiv.appendChild(taskDisplay)
+
     return mainDiv;
 }
 

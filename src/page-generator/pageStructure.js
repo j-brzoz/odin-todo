@@ -1,5 +1,5 @@
 import {header, footer} from "./header_footer";
-import sidebar from "./sidebar";
+import { sidebar } from "./sidebar";
 import mainContent from "./mainContent";
 
 function pageStucture(){
