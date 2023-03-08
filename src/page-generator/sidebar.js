@@ -2,6 +2,7 @@ import "../style.css";
 import { projects } from "../logic/project";
 import { lists } from "../logic/list";
 import { taskFromList, taskFromProject } from "./taskDisplayFromListProject";
+import { taskFromToday, taskFromWeek, taskFromMonth, taskAll } from "./taskDisplayByDate";
 
 function cleanContent(){
     const div = document.getElementById("taskDisplay");
@@ -26,6 +27,18 @@ function sidebarBtns(){
     weekBtn.classList.add("sidebarBtn");
     monthBtn.classList.add("sidebarBtn");
     allBtn.classList.add("sidebarBtn");
+
+    todayBtn.addEventListener("click", () => cleanContent());
+    todayBtn.addEventListener("click", () => taskFromToday());
+
+    weekBtn.addEventListener("click", () => cleanContent());
+    weekBtn.addEventListener("click", () => taskFromWeek());
+
+    monthBtn.addEventListener("click", () => cleanContent());
+    monthBtn.addEventListener("click", () => taskFromMonth());
+
+    allBtn.addEventListener("click", () => cleanContent());
+    allBtn.addEventListener("click", () => taskAll());
 
     sidebarBtnsDiv.appendChild(todayBtn);
     sidebarBtnsDiv.appendChild(weekBtn);
