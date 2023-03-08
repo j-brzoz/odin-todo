@@ -30,7 +30,7 @@ function taskFromProject(project){
                 const taskStatus = document.createElement("p");
 
                 taskTitle.textContent = projects[i].tasks[j].title;
-                taskDate.textContent = projects[i].tasks[j].dueDate;
+                taskDate.textContent = projects[i].tasks[j].dueDate.toDateString();
                 taskPriority.textContent = projects[i].tasks[j].priority;
                 taskStatus.textContent = projects[i].tasks[j].status;
 
@@ -61,6 +61,7 @@ function taskFromProject(project){
     projectTitle.classList.add("title");
     projectDate.classList.add("date");
     projectTasks.classList.add("tasks");
+    projectDescrition.classList.add("description");
 
     projectInfo.appendChild(projectTitle);
     projectInfo.appendChild(projectDate);
@@ -101,7 +102,7 @@ function taskFromList(list){
                 const taskStatus = document.createElement("p");
 
                 taskTitle.textContent = lists[i].tasks[j].title;
-                taskDate.textContent = lists[i].tasks[j].dueDate;
+                taskDate.textContent = lists[i].tasks[j].dueDate.toDateString();
                 taskPriority.textContent = lists[i].tasks[j].priority;
                 taskStatus.textContent = lists[i].tasks[j].status;
 
@@ -131,6 +132,7 @@ function taskFromList(list){
     listInfo.classList.add("info");
     listTitle.classList.add("title");
     listTasks.classList.add("tasks");
+    listDescrition.classList.add("description");
 
     listInfo.appendChild(listTitle);
     

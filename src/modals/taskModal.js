@@ -57,7 +57,7 @@ function taskFormGenerator(){
         name: "title",
         placeholder: "Title",
         minlength: 2,
-        maxlength: 30,
+        maxlength: 20,
         required: true
     }
     general.attributesSetter(title, titleAttributes);
