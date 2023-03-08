@@ -11,4 +11,10 @@ function attributesSetter(element, elementAttributes){
     })
 }
 
-export { modalDisplay, attributesSetter}
+// clean sidebar to update lists/projects
+function cleanSidebar(){
+    const div = document.getElementsByClassName("sidebar");
+    div[0].innerHTML = "";
+}
+
+export { modalDisplay, attributesSetter, cleanSidebar}

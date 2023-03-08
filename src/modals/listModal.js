@@ -1,5 +1,6 @@
 import { List } from "../logic/list";
 import * as general from "./general";
+import { sidebar } from "../page-generator/sidebar";
 
 function dataListHandling(){
     // DOM elements
@@ -26,6 +27,9 @@ function dataListHandling(){
         newList.addListToArray();
 
         listForm.reset();
+
+        general.cleanSidebar();
+        document.body.appendChild(sidebar());
     })
 };
 

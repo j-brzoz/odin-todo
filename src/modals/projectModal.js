@@ -1,5 +1,6 @@
 import { Project } from "../logic/project";
 import * as general from "./general";
+import { sidebar } from "../page-generator/sidebar";
 
 function dataProjectHandling(){
     // DOM elements
@@ -27,6 +28,9 @@ function dataProjectHandling(){
         newProject.addProjectToArray();
 
         projectForm.reset();
+
+        general.cleanSidebar();
+        document.body.appendChild(sidebar());
     })
 };
 
